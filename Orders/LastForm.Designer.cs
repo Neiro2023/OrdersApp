@@ -38,6 +38,7 @@
             ClientSize = new Size(1483, 849);
             Name = "LastForm";
             Text = "LastForm";
+            Load += LastForm_Load;
             ResumeLayout(false);
         }
 

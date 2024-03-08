@@ -44,6 +44,17 @@
             panel6 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
+            panel20 = new Panel();
+            textBoxOldPass = new TextBox();
+            textBox2 = new TextBox();
+            label14 = new Label();
+            labelOldName = new Label();
+            labelSend = new Label();
+            panel21 = new Panel();
+            panel22 = new Panel();
+            panel23 = new Panel();
+            panel24 = new Panel();
+            label19 = new Label();
             panel15 = new Panel();
             label11 = new Label();
             textBoxLNameCheck = new TextBox();
@@ -78,6 +89,8 @@
             panel5.SuspendLayout();
             panel9.SuspendLayout();
             panel4.SuspendLayout();
+            panel20.SuspendLayout();
+            panel24.SuspendLayout();
             panel15.SuspendLayout();
             panel19.SuspendLayout();
             panel10.SuspendLayout();
@@ -231,7 +244,7 @@
             // 
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             label4.ForeColor = Color.Lime;
-            label4.Location = new Point(7, 38);
+            label4.Location = new Point(13, 38);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(380, 84);
@@ -276,6 +289,7 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(panel20);
             panel4.Controls.Add(panel15);
             panel4.Controls.Add(panel10);
             panel4.Dock = DockStyle.Fill;
@@ -284,6 +298,117 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1515, 937);
             panel4.TabIndex = 2;
+            // 
+            // panel20
+            // 
+            panel20.Controls.Add(textBoxOldPass);
+            panel20.Controls.Add(textBox2);
+            panel20.Controls.Add(label14);
+            panel20.Controls.Add(labelOldName);
+            panel20.Controls.Add(labelSend);
+            panel20.Controls.Add(panel21);
+            panel20.Controls.Add(panel22);
+            panel20.Controls.Add(panel23);
+            panel20.Controls.Add(panel24);
+            panel20.Location = new Point(660, 15);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(833, 435);
+            panel20.TabIndex = 2;
+            // 
+            // textBoxOldPass
+            // 
+            textBoxOldPass.Location = new Point(223, 213);
+            textBoxOldPass.Name = "textBoxOldPass";
+            textBoxOldPass.Size = new Size(423, 47);
+            textBoxOldPass.TabIndex = 14;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(223, 136);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(423, 47);
+            textBox2.TabIndex = 10;
+            // 
+            // label14
+            // 
+            label14.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label14.ForeColor = Color.FromArgb(128, 255, 128);
+            label14.Location = new Point(80, 213);
+            label14.Name = "label14";
+            label14.Size = new Size(137, 50);
+            label14.TabIndex = 9;
+            label14.Text = "Пароль";
+            // 
+            // labelOldName
+            // 
+            labelOldName.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelOldName.ForeColor = Color.FromArgb(128, 255, 128);
+            labelOldName.Location = new Point(80, 136);
+            labelOldName.Name = "labelOldName";
+            labelOldName.Size = new Size(137, 50);
+            labelOldName.TabIndex = 5;
+            labelOldName.Text = "Имя";
+            // 
+            // labelSend
+            // 
+            labelSend.Font = new Font("Segoe UI Semibold", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            labelSend.ForeColor = Color.Lime;
+            labelSend.Location = new Point(312, 329);
+            labelSend.Name = "labelSend";
+            labelSend.Size = new Size(211, 66);
+            labelSend.TabIndex = 4;
+            labelSend.Text = "Отправить";
+            labelSend.TextAlign = ContentAlignment.MiddleCenter;
+            labelSend.MouseEnter += labelSend_MouseEnter;
+            labelSend.MouseLeave += labelSend_MouseLeave;
+            // 
+            // panel21
+            // 
+            panel21.BackColor = Color.FromArgb(128, 255, 128);
+            panel21.Dock = DockStyle.Left;
+            panel21.Location = new Point(0, 85);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(10, 339);
+            panel21.TabIndex = 3;
+            // 
+            // panel22
+            // 
+            panel22.BackColor = Color.FromArgb(128, 255, 128);
+            panel22.Dock = DockStyle.Right;
+            panel22.Location = new Point(823, 85);
+            panel22.Name = "panel22";
+            panel22.Size = new Size(10, 339);
+            panel22.TabIndex = 2;
+            // 
+            // panel23
+            // 
+            panel23.BackColor = Color.FromArgb(128, 255, 128);
+            panel23.Dock = DockStyle.Bottom;
+            panel23.Location = new Point(0, 424);
+            panel23.Name = "panel23";
+            panel23.Size = new Size(833, 11);
+            panel23.TabIndex = 1;
+            // 
+            // panel24
+            // 
+            panel24.BackColor = Color.FromArgb(128, 255, 128);
+            panel24.Controls.Add(label19);
+            panel24.Dock = DockStyle.Top;
+            panel24.Location = new Point(0, 0);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(833, 85);
+            panel24.TabIndex = 0;
+            // 
+            // label19
+            // 
+            label19.Font = new Font("Segoe UI Semibold", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(251, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(341, 85);
+            label19.TabIndex = 0;
+            label19.Text = "Безопасность";
+            label19.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel15
             // 
@@ -297,29 +422,29 @@
             panel15.Controls.Add(panel17);
             panel15.Controls.Add(panel18);
             panel15.Controls.Add(panel19);
-            panel15.Location = new Point(854, 15);
+            panel15.Location = new Point(15, 15);
             panel15.Name = "panel15";
-            panel15.Size = new Size(639, 548);
+            panel15.Size = new Size(639, 435);
             panel15.TabIndex = 1;
             // 
             // label11
             // 
             label11.ForeColor = Color.FromArgb(128, 255, 128);
-            label11.Location = new Point(169, 351);
+            label11.Location = new Point(169, 263);
             label11.Name = "label11";
             label11.Size = new Size(423, 56);
             label11.TabIndex = 15;
             // 
             // textBoxLNameCheck
             // 
-            textBoxLNameCheck.Location = new Point(169, 295);
+            textBoxLNameCheck.Location = new Point(169, 213);
             textBoxLNameCheck.Name = "textBoxLNameCheck";
             textBoxLNameCheck.Size = new Size(423, 47);
             textBoxLNameCheck.TabIndex = 14;
             // 
             // textBoxNameCheck
             // 
-            textBoxNameCheck.Location = new Point(169, 189);
+            textBoxNameCheck.Location = new Point(169, 136);
             textBoxNameCheck.Name = "textBoxNameCheck";
             textBoxNameCheck.Size = new Size(423, 47);
             textBoxNameCheck.TabIndex = 10;
@@ -328,7 +453,7 @@
             // 
             label2.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label2.ForeColor = Color.FromArgb(128, 255, 128);
-            label2.Location = new Point(26, 295);
+            label2.Location = new Point(26, 213);
             label2.Name = "label2";
             label2.Size = new Size(137, 50);
             label2.TabIndex = 9;
@@ -338,7 +463,7 @@
             // 
             label15.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label15.ForeColor = Color.FromArgb(128, 255, 128);
-            label15.Location = new Point(26, 189);
+            label15.Location = new Point(26, 136);
             label15.Name = "label15";
             label15.Size = new Size(137, 50);
             label15.TabIndex = 5;
@@ -348,7 +473,7 @@
             // 
             labelButCheckAccaunt.Font = new Font("Segoe UI Semibold", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, 204);
             labelButCheckAccaunt.ForeColor = Color.Lime;
-            labelButCheckAccaunt.Location = new Point(256, 429);
+            labelButCheckAccaunt.Location = new Point(243, 329);
             labelButCheckAccaunt.Name = "labelButCheckAccaunt";
             labelButCheckAccaunt.Size = new Size(211, 66);
             labelButCheckAccaunt.TabIndex = 4;
@@ -364,7 +489,7 @@
             panel16.Dock = DockStyle.Left;
             panel16.Location = new Point(0, 85);
             panel16.Name = "panel16";
-            panel16.Size = new Size(10, 452);
+            panel16.Size = new Size(10, 339);
             panel16.TabIndex = 3;
             // 
             // panel17
@@ -373,14 +498,14 @@
             panel17.Dock = DockStyle.Right;
             panel17.Location = new Point(629, 85);
             panel17.Name = "panel17";
-            panel17.Size = new Size(10, 452);
+            panel17.Size = new Size(10, 339);
             panel17.TabIndex = 2;
             // 
             // panel18
             // 
             panel18.BackColor = Color.FromArgb(128, 255, 128);
             panel18.Dock = DockStyle.Bottom;
-            panel18.Location = new Point(0, 537);
+            panel18.Location = new Point(0, 424);
             panel18.Name = "panel18";
             panel18.Size = new Size(639, 11);
             panel18.TabIndex = 1;
@@ -403,7 +528,7 @@
             label17.Name = "label17";
             label17.Size = new Size(341, 85);
             label17.TabIndex = 0;
-            label17.Text = "Безопасность";
+            label17.Text = "Проверка аккаунта";
             label17.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel10
@@ -423,21 +548,21 @@
             panel10.Controls.Add(panel13);
             panel10.Controls.Add(panel12);
             panel10.Controls.Add(panel11);
-            panel10.Location = new Point(5, 15);
+            panel10.Location = new Point(15, 456);
             panel10.Name = "panel10";
-            panel10.Size = new Size(833, 548);
+            panel10.Size = new Size(1478, 469);
             panel10.TabIndex = 0;
             // 
             // textBoxPassChange
             // 
-            textBoxPassChange.Location = new Point(295, 348);
+            textBoxPassChange.Location = new Point(760, 259);
             textBoxPassChange.Name = "textBoxPassChange";
             textBoxPassChange.Size = new Size(477, 47);
             textBoxPassChange.TabIndex = 14;
             // 
             // maskedTextBox1
             // 
-            maskedTextBox1.Location = new Point(295, 295);
+            maskedTextBox1.Location = new Point(760, 152);
             maskedTextBox1.Mask = "(999) 000-0000";
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(477, 47);
@@ -445,21 +570,21 @@
             // 
             // textBoxMailChange
             // 
-            textBoxMailChange.Location = new Point(295, 242);
+            textBoxMailChange.Location = new Point(177, 362);
             textBoxMailChange.Name = "textBoxMailChange";
             textBoxMailChange.Size = new Size(477, 47);
             textBoxMailChange.TabIndex = 12;
             // 
             // textBoxLNameChange
             // 
-            textBoxLNameChange.Location = new Point(295, 189);
+            textBoxLNameChange.Location = new Point(177, 259);
             textBoxLNameChange.Name = "textBoxLNameChange";
             textBoxLNameChange.Size = new Size(477, 47);
             textBoxLNameChange.TabIndex = 11;
             // 
             // textBoxNameChange
             // 
-            textBoxNameChange.Location = new Point(295, 136);
+            textBoxNameChange.Location = new Point(177, 152);
             textBoxNameChange.Name = "textBoxNameChange";
             textBoxNameChange.Size = new Size(477, 47);
             textBoxNameChange.TabIndex = 10;
@@ -468,7 +593,7 @@
             // 
             label10.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label10.ForeColor = Color.FromArgb(128, 255, 128);
-            label10.Location = new Point(56, 348);
+            label10.Location = new Point(760, 206);
             label10.Name = "label10";
             label10.Size = new Size(214, 50);
             label10.TabIndex = 9;
@@ -478,7 +603,7 @@
             // 
             label9.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label9.ForeColor = Color.FromArgb(128, 255, 128);
-            label9.Location = new Point(56, 295);
+            label9.Location = new Point(760, 99);
             label9.Name = "label9";
             label9.Size = new Size(214, 50);
             label9.TabIndex = 8;
@@ -488,7 +613,7 @@
             // 
             label8.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label8.ForeColor = Color.FromArgb(128, 255, 128);
-            label8.Location = new Point(56, 189);
+            label8.Location = new Point(177, 206);
             label8.Name = "label8";
             label8.Size = new Size(214, 50);
             label8.TabIndex = 7;
@@ -498,7 +623,7 @@
             // 
             label7.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label7.ForeColor = Color.FromArgb(128, 255, 128);
-            label7.Location = new Point(56, 242);
+            label7.Location = new Point(177, 309);
             label7.Name = "label7";
             label7.Size = new Size(214, 50);
             label7.TabIndex = 6;
@@ -508,7 +633,7 @@
             // 
             label6.Font = new Font("Segoe UI", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label6.ForeColor = Color.FromArgb(128, 255, 128);
-            label6.Location = new Point(56, 136);
+            label6.Location = new Point(177, 99);
             label6.Name = "label6";
             label6.Size = new Size(214, 50);
             label6.TabIndex = 5;
@@ -518,7 +643,7 @@
             // 
             labelChange.Font = new Font("Segoe UI Semibold", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, 204);
             labelChange.ForeColor = Color.Lime;
-            labelChange.Location = new Point(416, 429);
+            labelChange.Location = new Point(879, 351);
             labelChange.Name = "labelChange";
             labelChange.Size = new Size(211, 66);
             labelChange.TabIndex = 4;
@@ -533,26 +658,27 @@
             panel14.Dock = DockStyle.Left;
             panel14.Location = new Point(0, 85);
             panel14.Name = "panel14";
-            panel14.Size = new Size(10, 452);
+            panel14.Size = new Size(10, 373);
             panel14.TabIndex = 3;
             // 
             // panel13
             // 
             panel13.BackColor = Color.FromArgb(128, 255, 128);
             panel13.Dock = DockStyle.Right;
-            panel13.Location = new Point(823, 85);
+            panel13.Location = new Point(1468, 85);
             panel13.Name = "panel13";
-            panel13.Size = new Size(10, 452);
+            panel13.Size = new Size(10, 373);
             panel13.TabIndex = 2;
             // 
             // panel12
             // 
             panel12.BackColor = Color.FromArgb(128, 255, 128);
             panel12.Dock = DockStyle.Bottom;
-            panel12.Location = new Point(0, 537);
+            panel12.Location = new Point(0, 458);
             panel12.Name = "panel12";
-            panel12.Size = new Size(833, 11);
+            panel12.Size = new Size(1478, 11);
             panel12.TabIndex = 1;
+            panel12.Paint += panel12_Paint;
             // 
             // panel11
             // 
@@ -561,18 +687,18 @@
             panel11.Dock = DockStyle.Top;
             panel11.Location = new Point(0, 0);
             panel11.Name = "panel11";
-            panel11.Size = new Size(833, 85);
+            panel11.Size = new Size(1478, 85);
             panel11.TabIndex = 0;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI Semibold", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(233, 0);
+            label1.Location = new Point(512, 0);
             label1.Name = "label1";
-            label1.Size = new Size(341, 85);
+            label1.Size = new Size(517, 85);
             label1.TabIndex = 0;
-            label1.Text = "Личные данные";
+            label1.Text = "Изменить личные данные";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // HomePage
@@ -597,6 +723,9 @@
             panel5.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            panel20.ResumeLayout(false);
+            panel20.PerformLayout();
+            panel24.ResumeLayout(false);
             panel15.ResumeLayout(false);
             panel15.PerformLayout();
             panel19.ResumeLayout(false);
@@ -629,7 +758,6 @@
         private Label label1;
         private Panel panel14;
         private Panel panel13;
-        private Panel panel12;
         private TextBox textBoxPassChange;
         private MaskedTextBox maskedTextBox1;
         private TextBox textBoxMailChange;
@@ -653,5 +781,17 @@
         private Panel panel19;
         private Label label17;
         private Label label11;
+        private Panel panel12;
+        private Panel panel20;
+        private TextBox textBoxOldPass;
+        private TextBox textBox2;
+        private Label label14;
+        private Label labelOldName;
+        private Label labelSend;
+        private Panel panel21;
+        private Panel panel22;
+        private Panel panel23;
+        private Panel panel24;
+        private Label label19;
     }
 }

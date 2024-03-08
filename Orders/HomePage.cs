@@ -6,10 +6,10 @@ namespace Orders
     {
         bool drag = false;
         Point startPoint = new Point(0, 0);
-        public HomePage()
-        {
-            InitializeComponent();
-        }
+        private Form? active = null;
+        public HomePage() => InitializeComponent();
+
+        //Код дизайна
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             drag = true;
@@ -27,86 +27,59 @@ namespace Orders
         private void label1_Click(object sender, EventArgs e) => Application.Exit();
         private void label3_Click(object sender, EventArgs e)
         {
-            panel6.Visible = true;
-            panel6.BackColor = Color.Lime;
-            panel7.Visible = false;
-            panel8.Visible = false;
+            panel6.Visible = true; panel6.BackColor = Color.Lime; panel7.Visible = false; panel8.Visible = false;
             OpenForm(new LastForm());
         }
         private void label4_Click(object sender, EventArgs e)
         {
-            panel6.Visible = false;
-            panel7.Visible = false;
-            panel8.Visible = true;
-            panel8.BackColor = Color.Lime;
+            panel6.Visible = false; panel7.Visible = false; panel8.Visible = true; panel8.BackColor = Color.Lime;
             OpenForm(new NextForm());
         }
         private void label5_Click(object sender, EventArgs e)
         {
-            panel7.Visible = true;
-            panel6.Visible = false;
-            panel7.BackColor = Color.Lime;
-            panel8.Visible = false;
+            panel7.Visible = true; panel6.Visible = false; panel7.BackColor = Color.Lime; panel8.Visible = false;
             OpenForm(new ElseForm());
         }
-        private Form active = null;
         private void OpenForm(Form cildren)
         {
             if (active != null) active.Close();
-            active = cildren;
-            cildren.TopLevel = false;
-            cildren.FormBorderStyle = FormBorderStyle.None;
-            cildren.Dock = DockStyle.Fill;
-            panel4.Controls.Add(cildren);
-            panel4.Tag = cildren;
-            cildren.BringToFront();
-            cildren.Show();
+            active = cildren; cildren.TopLevel = false; cildren.FormBorderStyle = FormBorderStyle.None; cildren.Dock = DockStyle.Fill;
+            panel4.Controls.Add(cildren); panel4.Tag = cildren; cildren.BringToFront(); cildren.Show();
         }
-
         private void label6_Click(object sender, EventArgs e)
         {
-
             new HomePage().Show();
             Hide();
         }
-
         private void label7_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
-            this.Hide();
+            ShowRegForm();
         }
-
         private void Home_MouseEnter(object sender, EventArgs e)
         {
             Home.BackColor = Color.Black;
         }
-
         private void Home_MouseLeave(object sender, EventArgs e)
         {
             Home.BackColor = Color.Transparent;
         }
-
         private void RegButton_MouseEnter(object sender, EventArgs e)
         {
             RegButton.BackColor = Color.Black;
         }
-
         private void RegButton_MouseLeave(object sender, EventArgs e)
         {
             RegButton.BackColor = Color.Transparent;
         }
-
         private void EntButton_Click(object sender, EventArgs e)
         {
             new Entrance().Show();
             this.Hide();
         }
-
         private void EntButton_MouseEnter(object sender, EventArgs e)
         {
             EntButton.BackColor = Color.Black;
         }
-
         private void EntButton_MouseLeave(object sender, EventArgs e)
         {
             EntButton.BackColor = Color.Transparent;
@@ -115,22 +88,35 @@ namespace Orders
         {
             labelChange.BackColor = Color.Black;
         }
-
         private void labelChange_MouseLeave(object sender, EventArgs e)
         {
             labelChange.BackColor = Color.Transparent;
         }
-
         private void labelButCheckAccaunt_MouseEnter(object sender, EventArgs e)
         {
             labelButCheckAccaunt.BackColor = Color.Black;
         }
-
         private void labelButCheckAccaunt_MouseLeave(object sender, EventArgs e)
         {
             labelButCheckAccaunt.BackColor = Color.Transparent;
         }
+        private void labelSend_MouseEnter(object sender, EventArgs e)
+        {
+            labelSend.BackColor = Color.Black;
+        }
+        private void labelSend_MouseLeave(object sender, EventArgs e)
+        {
+            labelSend.BackColor = Color.Transparent;
+        }
 
+        //Мои приватные методы 
+        private void ShowRegForm()
+        {
+            new Form1().Show();
+            Hide();
+        }
+
+        //События формы
         private void labelButCheckAccaunt_Click(object sender, EventArgs e)
         {
             string name = textBoxNameCheck.Text.Trim();
@@ -138,18 +124,21 @@ namespace Orders
             if (appContext.Clients != null)
             {
                 ClientDb? clientDb = dataService.SearchEntity(pass, name);
-                if (clientDb?.Pass == pass)
-                {
-                    label11.Text = $"{name}, Вы есть в базе";
-                }
+                if (clientDb?.Pass == pass) label11.Text = $"{name}, Вы есть в базе";
                 else
                 {
                     label11.Text = "Вас в базе нет ";
                     Task.Delay(1000);
-                    new Form1().Show();
-                    Hide();
+                    ShowRegForm();
                 }
             }
         }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+     
     }
 }

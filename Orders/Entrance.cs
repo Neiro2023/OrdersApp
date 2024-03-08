@@ -6,10 +6,9 @@ namespace Orders
     {
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
-        public Entrance()
-        {
-            InitializeComponent();
-        }
+        public Entrance() => InitializeComponent();
+
+        //Код дизайна
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             drag = true;
@@ -26,37 +25,33 @@ namespace Orders
         private void panel2_MouseUp(object sender, MouseEventArgs e) => drag = false;
         private void Close2_Click(object sender, EventArgs e) => Application.Exit();
 
-        private void buttonRegBack_Click(object sender, EventArgs e)
-        {
-            new Form1().Show();
-            this.Hide();
-        }
-        internal void SearchClient(string pass, string name)
+        //Мои приватные методы
+        private void SearchClient(string pass, string name)
         {
             if (appContext.Clients != null)
             {
                 ClientDb? clientDb = dataService.SearchEntity(pass, name);
                 if (clientDb?.Pass == pass) ShowHomePage();
-                else MessageBox.Show("Такой пользователь не найден"); 
-            }   
+                else MessageBox.Show("Такой пользователь не найден");
+            }
+        }
+        private void ShowHomePage()
+        {
+            new HomePage().Show();
+            this.Hide();
         }
 
+        //События формы
+        private void buttonRegBack_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Hide();
+        }
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             string name = textBoxEntName.Text;  
             string pass = textBoxEntPass.Text;
             SearchClient(pass, name);
-          
-        }
-        private void ShowHomePage()
-        {  
-            new HomePage().Show();
-            this.Hide(); 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

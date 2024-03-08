@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Orders
+﻿namespace Orders
 {
     public partial class LastForm : Form
     {
-        public LastForm()
+        public LastForm()=>InitializeComponent();
+
+        //Мои приватные методы
+
+        //События формы
+        private void LastForm_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
+
         }
     }
 }

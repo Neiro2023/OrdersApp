@@ -128,10 +128,10 @@
             flowLayoutPanel1.Controls.Add(checkBoxCheck);
             flowLayoutPanel1.Controls.Add(checkBoxRobot);
             flowLayoutPanel1.Controls.Add(buttonReg);
-            flowLayoutPanel1.Location = new Point(53, 172);
+            flowLayoutPanel1.Location = new Point(53, 159);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(521, 854);
+            flowLayoutPanel1.Size = new Size(521, 904);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // label7
@@ -190,6 +190,7 @@
             textBoxRegEmail.Name = "textBoxRegEmail";
             textBoxRegEmail.Size = new Size(518, 47);
             textBoxRegEmail.TabIndex = 10;
+            textBoxRegEmail.TextChanged += textBoxRegEmail_TextChanged;
             // 
             // label4
             // 
@@ -327,7 +328,6 @@
             label9.TabIndex = 2;
             label9.Text = "РЕГИСТРАЦИЯ";
             label9.TextAlign = ContentAlignment.MiddleCenter;
-            label9.Click += label9_Click;
             // 
             // label10
             // 

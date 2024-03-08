@@ -1,5 +1,4 @@
 using Orders.MainContexts;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Orders
 {
@@ -7,16 +6,18 @@ namespace Orders
     {
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
-        public Form1()
-        {
-            InitializeComponent();
-        }
+
+        public Form1() => InitializeComponent();
+
+        //Загрузка формы
         private void Form1_Load(object sender, EventArgs e)
         {
             buttonReg.Enabled = false;
             checkBoxRobot.Enabled = false;
             checkBoxCheck.Enabled = true;
         }
+
+        //Код дизайна
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             drag = true;
@@ -33,6 +34,37 @@ namespace Orders
         private void panel1_MouseUp(object sender, MouseEventArgs e) => drag = false;
         private void label1_Click(object sender, EventArgs e) => Application.Exit();
 
+        //Мои приватные методы
+        private void GetValues()
+        {
+            string name, lastname, email, phone, birth, pass, passCheck;
+            name = textBoxRegName.Text; lastname = textBoxRegLastname.Text; email = textBoxRegEmail.Text; phone = maskedTextRegBoxPhone.Text;
+            birth = maskedTextRegBoxBirth.Text; pass = textBoxRegPass.Text; passCheck = textBoxRegPassRepeat.Text;
+            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(lastname) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(phone) &&
+                !string.IsNullOrWhiteSpace(birth) && !string.IsNullOrWhiteSpace(pass) && !string.IsNullOrWhiteSpace(passCheck)) checkBoxRobot.Enabled = true;
+            if (!string.Equals(pass, passCheck)) MessageBox.Show("Пароли не совпадают", "ПРЕДУПРЕЖДЕНИЕ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void AddNewClient()
+        {
+            ClientDb clientDb = new ClientDb()
+            {
+                Name = reg.GetName(textBoxRegName.Text),
+                Lastname = reg.GetLastname(textBoxRegLastname.Text),
+                Email = reg.GetEmail(textBoxRegEmail.Text),
+                Pass = reg.GetPass(textBoxRegPass.Text),
+                Phone = maskedTextRegBoxPhone.Text,
+                Birth = maskedTextRegBoxBirth.Text
+            };
+            dataService.AddEntity(clientDb);
+        }
+        private void ShowEnterForm()
+        {
+            new Entrance().Show();
+            this.Hide();
+        }
+        private void buttonEnter_Click(object sender, EventArgs e) => ShowEnterForm();
+
+        //События формы
         private void checkBoxCheck_MouseClick(object sender, MouseEventArgs e)
         {
             if (checkBoxCheck.Checked == true)
@@ -43,10 +75,8 @@ namespace Orders
             else checkBoxCheck.Text = "Все поля объязательны";
         }
 
-        private void checkBoxRobot_MouseClick(object sender, MouseEventArgs e)
-        {
-            buttonReg.Enabled = true;
-        }
+        private void checkBoxRobot_MouseClick(object sender, MouseEventArgs e) => buttonReg.Enabled = true;
+
 
         private void buttonReg_Click(object sender, EventArgs e)
         {
@@ -62,49 +92,7 @@ namespace Orders
             ShowEnterForm();
         }
 
-        private void GetValues()
-        {
-            string name = textBoxRegName.Text;
-            string lastname = textBoxRegLastname.Text;
-            string email = textBoxRegEmail.Text;
-            string phone = maskedTextRegBoxPhone.Text;
-            string birth = maskedTextRegBoxBirth.Text;
-            string pass = textBoxRegPass.Text;
-            string passCheck = textBoxRegPassRepeat.Text;
-            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(lastname) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(phone) &&
-                !string.IsNullOrWhiteSpace(birth) && !string.IsNullOrWhiteSpace(pass) && !string.IsNullOrWhiteSpace(passCheck))
-            {
-                checkBoxRobot.Enabled = true;
-            }
-            if (!string.Equals(pass, passCheck))
-                MessageBox.Show("Пароли не совпадают", "ПРЕДУПРЕЖДЕНИЕ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void AddNewClient()
-        {
-            ClientDb clientDb = new ClientDb()
-            {
-                Name = reg.GetName(textBoxRegName.Text),
-                Lastname = reg.GetLastname(textBoxRegLastname.Text),
-                Email = reg.GetEmail(textBoxRegEmail.Text),
-                Pass = reg.GetPass(textBoxRegPass.Text),
-                Phone = maskedTextRegBoxPhone.Text,
-                Birth = maskedTextRegBoxBirth.Text
-            };
-            dataService.AddEntity(clientDb);
-        }
-
-        private void ShowEnterForm()
-        {
-            new Entrance().Show();
-            this.Hide();
-        }
-
-        private void buttonEnter_Click(object sender, EventArgs e)
-        {
-            ShowEnterForm();
-        }
-
-        private void label9_Click(object sender, EventArgs e)
+        private void textBoxRegEmail_TextChanged(object sender, EventArgs e)
         {
 
         }

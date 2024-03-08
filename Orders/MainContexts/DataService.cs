@@ -4,7 +4,6 @@
     {
         private readonly ApplicationContext _context;
         public DataService(ApplicationContext context) =>_context = context;
-
         public DataService(System.Windows.Forms.ApplicationContext appContext) {}
 
         public void AddEntity(ClientDb clientDb)
